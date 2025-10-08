@@ -1,3 +1,5 @@
+/* Directly referenced elements */
+
 :root {
     --cream: #f8eedf;
     --wheat: #f5deb3;
@@ -21,7 +23,50 @@ body {
 
 }
 
+a {
+    text-decoration: none;
+}
+/* End of directly referenced elements */
 
+
+
+/* Classes */
+
+/* Flex container so the navbar components are spaced evenly and in the middle of the navbar */
+.navbar-flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.navbutton {
+    border-radius: 10px;
+    border: 1px solid var(--light-orange);
+    padding: 5px;
+    color: black;
+    background-color: var(--wheat);
+}
+
+.navbutton:hover {
+    background-color: var(--cream);
+}
+
+.about-me-flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* End of classes */
+
+
+
+/* Id's */
+
+/* Grid container that holds EVERYTHING */
 #main-grid-container {
     display: grid;
     height: 100vh;
@@ -32,10 +77,10 @@ body {
         "projects projects"
         "blogs blogs"
         "contact-me contact-me";
-    /* Controls vertical height of containers */
-    grid-template-rows: 0.25fr 1fr 1fr 1fr 1fr 0.25fr;
-    /* Controls horitzontal width of containers */
-    /* grid-template-columns: 1fr 0.5fr 0.5fr 1fr 1fr 1fr; */
+    /* Controls vertical height of containers [number of fr elements = number of rows(grid-template-areas) */
+    grid-template-rows: 0.35fr 1fr 1fr 1fr 1fr 0.25fr;
+    /* Controls horitzontal width of containers [number of fr elements = max(number of columns(grid-template-areas)) */
+    grid-template-columns: 1fr 1fr;
     gap: 1%;
 
 }
@@ -86,18 +131,24 @@ body {
     background-color: var(--wheat);
 }
 
+/* End of id's */
+
+
+
+/* Changes for mobile screens */
+
 /* We must make the website responsive, especially for mobile screens < 500px in width */
 @media only screen and (max-width: 500px) {
     #main-grid-container {
         grid-template-areas:
-        "top-navbar"
-        "about-me"
-        "skills"
-        "education"
-        "experience"
-        "projects"
-        "blogs"
-        "contact-me";
+            "top-navbar"
+            "about-me"
+            "skills"
+            "education"
+            "experience"
+            "projects"
+            "blogs"
+            "contact-me";
         /* Change the template rows to account for new containers */
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     }
