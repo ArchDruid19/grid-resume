@@ -1,0 +1,56 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Circular Placeholder College Logo</title>
+  <desc id="desc">Stylized shield with book, laurel wreath, and banner inside a circular frame.</desc>
+
+  <defs>
+    <style>
+      .circle-bg { fill: #0b79c1; }
+      .circle-border { fill: none; stroke: #ffffff; stroke-width: 16; }
+      .shield { fill: #ffffff; stroke: #0b3f66; stroke-width: 8; }
+      .accent { fill: #0b3f66; }
+      .gold { fill: #e0a800; stroke: #b07a00; stroke-width: 2; }
+      .laurel { fill: none; stroke: #0b3f66; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+      .banner { fill: #0b3f66; }
+      .banner-text { font-family: "Segoe UI", Roboto, Arial; font-weight: 700; font-size: 26px; fill: #ffffff; }
+    </style>
+  </defs>
+
+  <!-- Circular background -->
+  <circle cx="256" cy="256" r="248" class="circle-bg"></circle>
+  <circle cx="256" cy="256" r="240" class="circle-border"></circle>
+
+  <!-- Shield -->
+  <g transform="translate(128,96)">
+    <path class="shield" d="M128 8
+                            L32 56
+                            L32 168
+                            C32 232 92 276 128 296
+                            C164 276 224 232 224 168
+                            L224 56 Z"></path>
+    <!-- Book -->
+    <g transform="translate(56,64) scale(0.6)">
+      <path d="M80 24 L16 48 L16 96 L80 72 Z" fill="#f6f9fb" stroke="#0b3f66" stroke-width="4"></path>
+      <path d="M240 24 L304 48 L304 96 L240 72 Z" fill="#f6f9fb" stroke="#0b3f66" stroke-width="4"></path>
+      <path d="M80 24 Q176 8 272 24" fill="none" stroke="#0b3f66" stroke-width="4"></path>
+      <rect x="96" y="56" width="120" height="6" rx="2" fill="#0b3f66" opacity="0.5"></rect>
+    </g>
+
+    <!-- Torch -->
+    <g transform="translate(92,20) scale(0.6)">
+      <rect x="38" y="144" width="24" height="72" rx="8" class="accent"></rect>
+      <path d="M50 112 C34 112 28 92 50 76 C72 92 66 112 50 112 Z" class="gold"></path>
+      <circle cx="50" cy="72" r="4" fill="#e6b800"></circle>
+    </g>
+  </g>
+
+  <!-- Laurel wreath (simplified arcs) -->
+  <path class="laurel" d="M128 320 C96 280 96 200 128 160"></path>
+  <path class="laurel" d="M384 320 C416 280 416 200 384 160"></path>
+
+  <!-- Banner -->
+  <g transform="translate(128,368)">
+    <path class="banner" d="M0 24 L256 24 L232 64 L24 64 Z"></path>
+    <text x="128" y="52" text-anchor="middle" class="banner-text">PLACEHOLDER</text>
+  </g>
+</svg>

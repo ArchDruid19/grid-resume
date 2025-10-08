@@ -1,0 +1,104 @@
+:root {
+    --cream: #f8eedf;
+    --wheat: #f5deb3;
+    --border-gray: #3b2f2f;
+    --light-orange: #e7a86a;
+    --dark-orange: #e29a5c;
+    --darker-orange: #db8d4f;
+    --darkest-orange: #cf7f45;
+
+    --accent-orange: #e09759;
+    --soft-border: #a38260;
+}
+
+/* Linear gradient that goes from light to dark orange from the top left to bottom right */
+body {
+    background: linear-gradient(to bottom right,
+            var(--light-orange) 0%,
+            var(--dark-orange) 20%,
+            var(--darker-orange) 80%,
+            var(--darkest-orange) 90%);
+
+}
+
+
+#main-grid-container {
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+        "top-navbar top-navbar"
+        "about-me skills"
+        "education experience"
+        "projects projects"
+        "blogs blogs"
+        "contact-me contact-me";
+    /* Controls vertical height of containers */
+    grid-template-rows: 0.25fr 1fr 1fr 1fr 1fr 0.25fr;
+    /* Controls horitzontal width of containers */
+    /* grid-template-columns: 1fr 0.5fr 0.5fr 1fr 1fr 1fr; */
+    gap: 1%;
+
+}
+
+
+/* Assinging grid area names to ids */
+#top-navbar {
+    grid-area: top-navbar;
+}
+
+#about-me {
+    grid-area: about-me;
+}
+
+#skills {
+    grid-area: skills;
+}
+
+#education {
+    grid-area: education;
+}
+
+#experience {
+    grid-area: experience;
+}
+
+#projects {
+    grid-area: projects;
+}
+
+#blogs {
+    grid-area: blogs;
+}
+
+#contact-me {
+    grid-area: contact-me;
+}
+
+/* Set all panels to a background color */
+#top-navbar,
+#about-me,
+#skills,
+#education,
+#experience,
+#projects,
+#blogs,
+#contact-me {
+    background-color: var(--wheat);
+}
+
+/* We must make the website responsive, especially for mobile screens < 500px in width */
+@media only screen and (max-width: 500px) {
+    #main-grid-container {
+        grid-template-areas:
+        "top-navbar"
+        "about-me"
+        "skills"
+        "education"
+        "experience"
+        "projects"
+        "blogs"
+        "contact-me";
+        /* Change the template rows to account for new containers */
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
