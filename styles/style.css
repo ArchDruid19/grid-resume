@@ -85,6 +85,18 @@ p {
     text-align: center;
 }
 
+.skills-flex-col-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+}
+
+.skills-flex-col-container>ul {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+}
+
 
 
 /* Main flex container for putting the projects in a row */
@@ -150,6 +162,25 @@ p {
 .blogs-col-flex-container p {
     flex-grow: 1;
 }
+
+.bottom-navbar-flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.img-txt-flex-row-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    font-size: 64px;
+}
+
+
 
 
 
@@ -264,8 +295,13 @@ p {
     }
 
     .projects-row-flex-container,
-    .blogs-row-flex-container {
+    .blogs-row-flex-container,
+    .bottom-navbar-flex-container {
         flex-direction: column;
+    }
+
+    .bottom-navbar-flex-container {
+        text-align: center;
     }
 
     .projects-col-flex-container,

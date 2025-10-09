@@ -47,7 +47,6 @@
                         applications. My work blends problem-solving with clean design principles, and I’m always
                         exploring new technologies to improve efficiency and performance.</p>
                 </div>
-
             </div>
         </main>
 
@@ -56,31 +55,39 @@
             <header>
                 <h3>Skills</h3>
             </header>
-            <div>
+            <div class="skills-flex-col-container">
                 <ul>
-                    <li>Proficient in modern programming languages and frameworks with a strong focus on writing
-                        clean, maintainable code.</p>
+                    <li>
+                        <p>Proficient in modern programming languages and frameworks with a strong focus on writing
+                            clean, maintainable code.</p>
+                    </li>
 
-                    <li>Skilled in front-end and back-end web development, responsive design principles, and
-                        performance optimization.</p>
+                    <li>
+                        <p>Skilled in front-end and back-end web development, responsive design principles, and
+                            performance optimization.</p>
+                    </li>
 
-                    <li>Experienced in designing, building, and maintaining complex software systems. Strong
-                        understanding of data structures, algorithms, and system design.</p>
+                    <li>
+                        <p>Experienced in designing, building, and maintaining complex software systems. Strong
+                            understanding of data structures, algorithms, and system design.</p>
+                    </li>
 
-                    <li>Comfortable working across various layers of the technology stack, with an emphasis on
-                        problem-solving, adaptability, and clear communication.</p>
+                    <li>
+                        <p>Comfortable working across various layers of the technology stack, with an emphasis on
+                            problem-solving, adaptability, and clear communication.</p>
+                    </li>
                 </ul>
             </div>
         </section>
 
-
+<!-- This is a nightmare and I need to completly rethink how to do it -->
 
         <!-- Education -->
         <section id="education">
             <header>
                 <h3>Education</h3>
             </header>
-            
+
         </section>
 
 
@@ -219,8 +226,43 @@
 
         <!-- Bottom contact me nav bar -->
         <footer id="contact-me">
-            <nav class="contact-me-flex-container">
-                <!-- Footer where contact me info goes -->
+            <nav class="bottom-navbar-flex-container">
+                <!-- Telephone icon next to phone number -->
+                <div class="img-txt-flex-row-container">
+                    <div>
+                        <i class="fa fa-phone logo" id="phone-icon"></i>
+                    </div>
+                    <div>
+                        <p>(111)-111-1111</p>
+                    </div>
+                </div>
+
+                <!-- Email icon next to email -->
+                <div class="img-txt-flex-row-container">
+                    <div>
+                        <a href="mailto:ddvester@svsu.edu"><i class="fa fa-envelope logo" id="email-icon"></i></a>
+                    </div>
+                    <div>
+                        <p>ddvester@svsu.edu</p>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Icon with link to mail directly -->
+                <div class="spaced-icon-container">
+                    <a href="https://www.linkedin.com/in/drew-vesterfelt-391152349"><i
+                            class="fa-brands fa-linkedin logo" id="linked-in-icon"></i></a>
+                </div>
+
+                <!-- Gitlab Icon -->
+                <div class="spaced-icon-container">
+                    <a href="https://gitlab.com/ArchDruid"><i class="fa-brands fa-gitlab logo" id="gitlab-icon"></i></a>
+                </div>
+
+                <!-- GitHub Icon -->
+                <div class="spaced-icon-container">
+                    <a href="https://github.com/ArchDruid19"><i class="fa-brands fa-github logo"
+                            id="github-icon"></i></a>
+                </div>
             </nav>
         </footer>
 
