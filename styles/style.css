@@ -1,4 +1,6 @@
-/* Directly referenced elements */
+/* =========================================================
+   BASE ELEMENT STYLES
+   ========================================================= */
 
 :root {
     --cream: #f8eedf;
@@ -11,6 +13,8 @@
 
     --accent-orange: #e09759;
     --soft-border: #a38260;
+
+    --main-left-right-margin: 0.5rem;
 }
 
 /* Linear gradient that goes from light to dark orange from the top left to bottom right */
@@ -26,11 +30,25 @@ body {
 a {
     text-decoration: none;
 }
-/* End of directly referenced elements */
+
+h3 {
+    text-align: center;
+    font-size: 20px;
+}
+
+p {
+    font-size: 18px;
+}
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
 
 
 
-/* Classes */
+/* =========================================================
+   CLASS ELEMENT STYLES
+   ========================================================= */
 
 /* Flex container so the navbar components are spaced evenly and in the middle of the navbar */
 .navbar-flex-container {
@@ -39,17 +57,23 @@ a {
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    margin-left: var(--main-left-right-margin);
+    margin-right: var(--main-left-right-margin);
 }
 
-.navbutton {
+.navbutton,
+.internal-buttons {
     border-radius: 10px;
     border: 1px solid var(--light-orange);
-    padding: 5px;
+    padding: 15px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     color: black;
     background-color: var(--wheat);
 }
 
-.navbutton:hover {
+.navbutton:hover,
+.internal-buttons:hover {
     background-color: var(--cream);
 }
 
@@ -60,11 +84,78 @@ a {
     align-items: center;
     text-align: center;
 }
-/* End of classes */
 
 
 
-/* Id's */
+/* Main flex container for putting the projects in a row */
+.projects-row-flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+
+}
+
+/* Container for each individual project in the projects section */
+.projects-col-flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 50%;
+    /* Spacing between panels */
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    /* Border radius for the individual projects */
+    padding: 10px;
+}
+
+/* Makes the individual projects child elements align evenly by setting height to fill the entire container and then using flex-grow on 
+   paragraphs */
+.projects-col-flex-container>div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+
+/* makes p occupy the same height in both containers to make content align evenly */
+.projects-col-flex-container p {
+    flex-grow: 1;
+}
+
+
+.blogs-row-flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.blogs-col-flex-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 30%;
+    justify-content: space-between;
+}
+
+.blogs-col-flex-container>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.blogs-col-flex-container p {
+    flex-grow: 1;
+}
+
+
+
+/* =========================================================
+   ID ELEMENT STYLES
+   ========================================================= */
 
 /* Grid container that holds EVERYTHING */
 #main-grid-container {
@@ -78,7 +169,7 @@ a {
         "blogs blogs"
         "contact-me contact-me";
     /* Controls vertical height of containers [number of fr elements = number of rows(grid-template-areas) */
-    grid-template-rows: 0.35fr 1fr 1fr 1fr 1fr 0.25fr;
+    grid-template-rows: 0.50fr 1fr 1fr 1fr 1fr 0.50fr;
     /* Controls horitzontal width of containers [number of fr elements = max(number of columns(grid-template-areas)) */
     grid-template-columns: 1fr 1fr;
     gap: 1%;
@@ -101,10 +192,12 @@ a {
 
 #education {
     grid-area: education;
+    text-align: center;
 }
 
 #experience {
     grid-area: experience;
+    text-align: center;
 }
 
 #projects {
@@ -129,19 +222,35 @@ a {
 #blogs,
 #contact-me {
     background-color: var(--wheat);
+    border: 2px solid var(--accent-orange);
 }
 
-/* End of id's */
+#svsu-icon,
+#other-school-icon,
+#java-icon,
+#python-icon {
+    width: 200px;
+}
+
+#drumonitor-icon,
+#arch-druids-domain-icon {
+    width: 200px;
+}
+
+#coming-soon-image {
+    width: 200px;
+}
 
 
 
-/* Changes for mobile screens */
+/* =========================================================
+   MEDIA QUERYS/MOBILE STUFF
+   ========================================================= */
 
 /* We must make the website responsive, especially for mobile screens < 500px in width */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 800px) {
     #main-grid-container {
         grid-template-areas:
-            "top-navbar"
             "about-me"
             "skills"
             "education"
@@ -150,6 +259,21 @@ a {
             "blogs"
             "contact-me";
         /* Change the template rows to account for new containers */
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .projects-row-flex-container,
+    .blogs-row-flex-container {
+        flex-direction: column;
+    }
+
+    .projects-col-flex-container,
+    .blogs-col-flex-container {
+        width: fit-content;
+    }
+
+    #top-navbar {
+        display: none;
     }
 }
