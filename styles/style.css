@@ -15,33 +15,55 @@
     --soft-border: #a38260;
 
     --main-left-right-margin: 0.5rem;
+
+    /* Test colors */
+    --dark-pink: #F285AD;
+    --dark-blue: #4962F2;
+    --lighter-blue: #5079F2;
+    --lighest-blue: #578BF2;
+    --light-pink: #F2A2A2;
 }
 
 /* Linear gradient that goes from light to dark orange from the top left to bottom right */
-body {
-    background: linear-gradient(to bottom right,
-            var(--light-orange) 0%,
-            var(--dark-orange) 20%,
-            var(--darker-orange) 80%,
-            var(--darkest-orange) 90%);
+/* We need to set a min-height for both html and body or else the gradient has trouble
+rendering on some browsers */
+html, body {
+    background: linear-gradient(red, yellow, green);
+    min-height: 100vh;
 
 }
 
 a {
     text-decoration: none;
+    color: var(--border-gray)
 }
 
 h3 {
     text-align: center;
     font-size: 20px;
+    color: var(--border-gray);
+}
+
+h6 {
+    font-size: 18px;
+    color: var(--border-gray);
 }
 
 p {
     font-size: 18px;
+    color: var(--border-gray);
+}
+
+hr {
+    width: 95%;
 }
 
 * {
     font-family: 'Courier New', Courier, monospace;
+}
+
+li {
+    padding-top: 3rem;
 }
 
 
@@ -65,9 +87,8 @@ p {
 .internal-buttons {
     border-radius: 10px;
     border: 1px solid var(--light-orange);
-    padding: 15px;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    padding: 10px;
+    margin: 0.75rem;
     color: black;
     background-color: var(--wheat);
 }
@@ -89,6 +110,7 @@ p {
     display: flex;
     flex-direction: column;
     border: 1px solid blue;
+    padding: 1rem;
 }
 
 .skills-flex-col-container>ul {
@@ -97,6 +119,23 @@ p {
     border: 1px solid red;
 }
 
+.stacked-edu-exp-container {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edu-exp-flex-row-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Make text align center with icons */
+.edu-exp-flex-row-container>div {
+    align-content: center;
+}
 
 
 /* Main flex container for putting the projects in a row */
@@ -116,11 +155,11 @@ p {
     text-align: center;
     width: 50%;
     /* Spacing between panels */
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 1.5rem;
     border-radius: 5px;
     /* Border radius for the individual projects */
     padding: 10px;
+    border: 2px solid var(--border-gray);
 }
 
 /* Makes the individual projects child elements align evenly by setting height to fill the entire container and then using flex-grow on 
@@ -150,6 +189,12 @@ p {
     text-align: center;
     width: 30%;
     justify-content: space-between;
+    /* Spacing between panels */
+    margin: 1.5rem;
+    border-radius: 5px;
+    /* Border radius for the individual projects */
+    padding: 10px;
+    border: 2px solid var(--border-gray);
 }
 
 .blogs-col-flex-container>div {
@@ -191,7 +236,7 @@ p {
 /* Grid container that holds EVERYTHING */
 #main-grid-container {
     display: grid;
-    height: 100vh;
+    /* min-height: 100vh; */
     grid-template-areas:
         "top-navbar top-navbar"
         "about-me skills"
@@ -200,10 +245,10 @@ p {
         "blogs blogs"
         "contact-me contact-me";
     /* Controls vertical height of containers [number of fr elements = number of rows(grid-template-areas) */
-    grid-template-rows: 0.50fr 1fr 1fr 1fr 1fr 0.50fr;
+    grid-template-rows: 0.10fr 1fr 0.25fr 1fr 1fr 0.10fr;
     /* Controls horitzontal width of containers [number of fr elements = max(number of columns(grid-template-areas)) */
     grid-template-columns: 1fr 1fr;
-    gap: 1%;
+    gap: 1.5rem;
 
 }
 
@@ -256,11 +301,28 @@ p {
     border: 2px solid var(--accent-orange);
 }
 
+/* Padding for icons so text isnt so close together */
 #svsu-icon,
 #other-school-icon,
 #java-icon,
 #python-icon {
-    width: 200px;
+    width: 150px;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+}
+
+#phone-icon,
+#email-icon,
+#linkedin-icon,
+#gitlab-icon,
+#github-icon {
+    margin: 0.5rem;
+}
+
+/* Even out the button with the experience section */
+#read-more-education {
+    margin-top: 60px;
 }
 
 #drumonitor-icon,
@@ -270,6 +332,12 @@ p {
 
 #coming-soon-image {
     width: 200px;
+}
+
+#my-picture {
+    width: 400px;
+    margin-top: 1rem;
+    border: 1px solid var(--border-gray);
 }
 
 
@@ -290,13 +358,15 @@ p {
             "blogs"
             "contact-me";
         /* Change the template rows to account for new containers */
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.15fr;
         grid-template-columns: 1fr;
+        gap: 0.5rem;
     }
 
     .projects-row-flex-container,
     .blogs-row-flex-container,
-    .bottom-navbar-flex-container {
+    .bottom-navbar-flex-container,
+    .edu-exp-flex-row-container {
         flex-direction: column;
     }
 
