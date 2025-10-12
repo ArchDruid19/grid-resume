@@ -3,59 +3,52 @@
    ========================================================= */
 
 :root {
-    --cream: #f8eedf;
-    --wheat: #f5deb3;
-    --border-gray: #3b2f2f;
-    --light-orange: #e7a86a;
-    --dark-orange: #e29a5c;
-    --darker-orange: #db8d4f;
-    --darkest-orange: #cf7f45;
+  --dark-gray: #43464C;
+  --slate-gray: #9197A6;
+  --light-blue: #7690CF;
+  --trans-light-blue: #7691cfc9;
+  --dark-blue: #48577D;
 
-    --accent-orange: #e09759;
-    --soft-border: #a38260;
-
-    --main-left-right-margin: 0.5rem;
-
-    /* Test colors */
-    --dark-pink: #F285AD;
-    --dark-blue: #4962F2;
-    --lighter-blue: #5079F2;
-    --lighest-blue: #578BF2;
-    --light-pink: #F2A2A2;
+  --text-black: black;
 }
 
-/* Linear gradient that goes from light to dark orange from the top left to bottom right */
 /* We need to set a min-height for both html and body or else the gradient has trouble
-rendering on some browsers */
-html, body {
-    background: linear-gradient(red, yellow, green);
+rendering properly on some browsers */
+html,
+body {
+    /* background: linear-gradient(135deg, var(--dark-pink), var(--light-pink), var(--lighest-blue) 90%, var(--lighter-blue)); */
+    background: linear-gradient(to bottom, var(--dark-blue) 0%, var(--dark-gray) 40%, var(--slate-gray) 75%, var(--light-blue) 100%);
+
     min-height: 100vh;
 
 }
 
+body {
+    /* Font color */
+    color: black
+}
+
 a {
     text-decoration: none;
-    color: var(--border-gray)
+    color: black;
 }
 
 h3 {
     text-align: center;
     font-size: 20px;
-    color: var(--border-gray);
 }
 
 h6 {
     font-size: 18px;
-    color: var(--border-gray);
 }
 
 p {
     font-size: 18px;
-    color: var(--border-gray);
 }
 
 hr {
     width: 95%;
+    color: var(--dark-gray);
 }
 
 * {
@@ -86,16 +79,26 @@ li {
 .navbutton,
 .internal-buttons {
     border-radius: 10px;
-    border: 1px solid var(--light-orange);
+    border: 2px solid var(--dark-gray);
     padding: 10px;
     margin: 0.75rem;
     color: black;
-    background-color: var(--wheat);
+    background-color: var(--light-blue);
+    text-align: center;
+}
+
+.navbutton {
+    width: 70%;
+}
+
+.internal-buttons {
+    display: inline-block;
+    width: 70%;
 }
 
 .navbutton:hover,
 .internal-buttons:hover {
-    background-color: var(--cream);
+    background-color: var(--dark-blue);
 }
 
 .about-me-flex-container {
@@ -104,20 +107,17 @@ li {
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    border: 1px solid red;
 }
 
 .skills-flex-col-container {
     display: flex;
     flex-direction: column;
-    border: 1px solid blue;
     padding: 1rem;
 }
 
 .skills-flex-col-container>ul {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
 }
 
 .stacked-edu-exp-container {
@@ -160,7 +160,7 @@ li {
     border-radius: 5px;
     /* Border radius for the individual projects */
     padding: 10px;
-    border: 2px solid var(--border-gray);
+    border: 2px solid var(--dark-blue);
 }
 
 /* Makes the individual projects child elements align evenly by setting height to fill the entire container and then using flex-grow on 
@@ -195,7 +195,7 @@ li {
     border-radius: 5px;
     /* Border radius for the individual projects */
     padding: 10px;
-    border: 2px solid var(--border-gray);
+    border: 2px solid var(--dark-blue);
 }
 
 .blogs-col-flex-container>div {
@@ -226,6 +226,10 @@ li {
     font-size: 64px;
 }
 
+.mobile-contact-title {
+    display: none;
+}
+
 
 
 
@@ -238,8 +242,7 @@ li {
 #main-grid-container {
     display: grid;
     /* min-height: 100vh; */
-    grid-template-areas:
-        "top-navbar top-navbar"
+    grid-template-areas: "top-navbar top-navbar"
         "about-me skills"
         "education experience"
         "projects projects"
@@ -289,7 +292,6 @@ li {
     grid-area: contact-me;
 }
 
-/* Set all panels to a background color */
 #top-navbar,
 #about-me,
 #skills,
@@ -298,15 +300,17 @@ li {
 #projects,
 #blogs,
 #contact-me {
-    background-color: var(--wheat);
-    border: 2px solid var(--accent-orange);
+    /* Panels background colors */
+    background-color: var(--trans-light-blue);
+    border: 2px solid var(--dark-blue);
+    border-radius: 20px;
 }
 
-/* Padding for icons so text isnt so close together */
 #svsu-icon,
 #other-school-icon,
 #java-icon,
 #python-icon {
+    /* Padding for icons so text isnt so close together */
     width: 150px;
     padding-left: 0.5rem;
     padding-right: 1rem;
@@ -336,9 +340,12 @@ li {
 }
 
 #my-picture {
+    max-width: 100%;
     width: 400px;
+    height: auto;
     margin-top: 1rem;
-    border: 1px solid var(--border-gray);
+    border: 2px solid var(--dark-gray);
+    display: block;
 }
 
 
@@ -350,8 +357,7 @@ li {
 /* We must make the website responsive, especially for mobile screens < 500px in width */
 @media only screen and (max-width: 800px) {
     #main-grid-container {
-        grid-template-areas:
-            "about-me"
+        grid-template-areas: "about-me"
             "skills"
             "education"
             "experience"
@@ -380,7 +386,16 @@ li {
         width: fit-content;
     }
 
+    /* Only display title of footer when in mobile view */
+    .mobile-contact-title {
+        display: inline;
+    }
+
     #top-navbar {
         display: none;
+    }
+
+    #my-picture {
+        width: fit-content;
     }
 }
