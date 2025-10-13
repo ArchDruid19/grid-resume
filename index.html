@@ -6,21 +6,28 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Drew Vesterfelt's Grid Resume</title>
     <meta name="description" content="Example resume website using CSS3 grid">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/style.css">
     <!-- Font Awesome 6.5.1 for icons and fun stuff -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel=""
 
 </head>
 
 <body>
+    <script src="scripts/mobile_menu.js"></script>
     <!-- Main grid container that holds all panels for the whole website -->
     <div id="main-grid-container">
+        <header id="test">
+            <nav class="navbar-flex-container">
+                <a href="javascript:void(0)" onclick="showMenu()"><i class="fa-solid fa-bars hamburger-menu"></i></a>
+            </nav>
+        </header>
         <!-- Top navbar -->
         <header id="top-navbar">
-            <nav class="navbar-flex-container">
+            <nav class="navbar-flex-container" id="top-flex">
                 <!-- Top navbar menu -->
                 <a class="navbutton" href="https://archdruid.gitlab.io/archdruids-domain/">Return Home</a>
                 <a class="navbutton" href=#about-me>About Me</a>

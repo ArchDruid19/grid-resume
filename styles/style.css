@@ -348,6 +348,9 @@ li {
     display: block;
 }
 
+#test {
+    display: none;
+}
 
 
 /* =========================================================
@@ -357,7 +360,8 @@ li {
 /* We must make the website responsive, especially for mobile screens < 500px in width */
 @media only screen and (max-width: 800px) {
     #main-grid-container {
-        grid-template-areas: "about-me"
+        grid-template-areas: "test" "top-navbar"
+            "about-me"
             "skills"
             "education"
             "experience"
@@ -365,7 +369,7 @@ li {
             "blogs"
             "contact-me";
         /* Change the template rows to account for new containers */
-        grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.15fr;
+        grid-template-rows: 0fr 0fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.15fr;
         grid-template-columns: 1fr;
         gap: 0.5rem;
     }
@@ -398,4 +402,17 @@ li {
     #my-picture {
         width: fit-content;
     }
+
+
+
+    
+    #test {
+        display: inline;
+    }
+
+    .hamburger-menu {
+        font-size: 50px;
+        margin-left: 0.5rem;
+    }
+
 }
