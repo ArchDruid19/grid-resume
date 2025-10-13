@@ -6,8 +6,10 @@
   --dark-gray: #43464C;
   --slate-gray: #9197A6;
   --light-blue: #7690CF;
-  --trans-light-blue: #7691cfc9;
+  --trans-light-blue: #fff2f2b0;
   --dark-blue: #48577D;
+
+  --button-blue: #ffeded;
 
   --text-black: black;
 }
@@ -17,7 +19,7 @@ rendering properly on some browsers */
 html,
 body {
     /* background: linear-gradient(135deg, var(--dark-pink), var(--light-pink), var(--lighest-blue) 90%, var(--lighter-blue)); */
-    background: linear-gradient(to bottom, var(--dark-blue) 0%, var(--dark-gray) 40%, var(--slate-gray) 75%, var(--light-blue) 100%);
+    background: linear-gradient(to bottom, var(--dark-blue) 0%, var(--dark-gray) 40%, var(--slate-gray) 75%, var(--dark-blue) 100%);
 
     min-height: 100vh;
 
@@ -56,7 +58,7 @@ hr {
 }
 
 li {
-    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 
@@ -83,7 +85,7 @@ li {
     padding: 10px;
     margin: 0.75rem;
     color: black;
-    background-color: var(--light-blue);
+    background-color: var(--button-blue);
     text-align: center;
 }
 
@@ -98,7 +100,7 @@ li {
 
 .navbutton:hover,
 .internal-buttons:hover {
-    background-color: var(--dark-blue);
+    background-color: var(--light-blue);
 }
 
 .about-me-flex-container {
@@ -395,6 +397,10 @@ li {
         display: inline;
     }
 
+    .logo {
+        font-size: 52px;
+    }
+
     #top-navbar {
         display: none;
     }
@@ -402,16 +408,13 @@ li {
     #my-picture {
         width: fit-content;
     }
-
-
-
     
     #test {
         display: inline;
     }
 
     .hamburger-menu {
-        font-size: 50px;
+        font-size: 35px;
         margin-left: 0.5rem;
     }
 
