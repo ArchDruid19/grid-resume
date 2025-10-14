@@ -6,20 +6,24 @@
   --dark-gray: #43464C;
   --slate-gray: #9197A6;
   --light-blue: #7690CF;
-  --trans-light-blue: #fff2f2b0;
+  --trans-light-blue: #7ba3ffb0;
   --dark-blue: #48577D;
 
   --button-blue: #ffeded;
 
   --text-black: black;
+
+  --panel-background: #e0afa0;
+  --panel-borders: #a78176;
+
+
 }
 
 /* We need to set a min-height for both html and body or else the gradient has trouble
 rendering properly on some browsers */
 html,
 body {
-    /* background: linear-gradient(135deg, var(--dark-pink), var(--light-pink), var(--lighest-blue) 90%, var(--lighter-blue)); */
-    background: linear-gradient(to bottom, var(--dark-blue) 0%, var(--dark-gray) 40%, var(--slate-gray) 75%, var(--dark-blue) 100%);
+    background: linear-gradient(to top, #463F3A 0%, #8A817C 40%, #BCB8B1 75%, #979796 90%);
 
     min-height: 100vh;
 
@@ -303,8 +307,8 @@ li {
 #blogs,
 #contact-me {
     /* Panels background colors */
-    background-color: var(--trans-light-blue);
-    border: 2px solid var(--dark-blue);
+    background-color: var(--panel-background);
+    border: 2px solid var(--panel-borders);
     border-radius: 20px;
 }
 
@@ -350,7 +354,7 @@ li {
     display: block;
 }
 
-#test {
+#hidden-header {
     display: none;
 }
 
@@ -359,10 +363,10 @@ li {
    MEDIA QUERYS/MOBILE STUFF
    ========================================================= */
 
-/* We must make the website responsive, especially for mobile screens < 500px in width */
+/* We must make the website responsive, especially for mobile screens < 800px in width */
 @media only screen and (max-width: 800px) {
     #main-grid-container {
-        grid-template-areas: "test" "top-navbar"
+        grid-template-areas: "hidden-header" "top-navbar"
             "about-me"
             "skills"
             "education"
@@ -409,7 +413,7 @@ li {
         width: fit-content;
     }
     
-    #test {
+    #hidden-header {
         display: inline;
     }
 
