@@ -3,18 +3,15 @@
    ========================================================= */
 
 :root {
-  --dark-gray: #43464C;
-  --slate-gray: #9197A6;
-  --light-blue: #7690CF;
-  --trans-light-blue: #7ba3ffb0;
-  --dark-blue: #48577D;
+  --internal-border-blue: #48577D;
 
-  --button-blue: #ffeded;
+  --button-blue: #f5deb3;
+  --button-borders: #f2dfbc;
 
   --text-black: black;
 
-  --panel-background: #e0afa0;
-  --panel-borders: #a78176;
+  --panel-background: #e7a86a;
+  --panel-borders: #e5ae77;
 
 
 }
@@ -23,7 +20,7 @@
 rendering properly on some browsers */
 html,
 body {
-    background: linear-gradient(to top, #463F3A 0%, #8A817C 40%, #BCB8B1 75%, #979796 90%);
+    background: linear-gradient(to bottom, #f0f0f0 10%, #ece3e3 35%, #e7d1d1 55%);
 
     min-height: 100vh;
 
@@ -31,12 +28,12 @@ body {
 
 body {
     /* Font color */
-    color: black
+    color: var(--text-black)
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: var(--text-black)
 }
 
 h3 {
@@ -54,7 +51,7 @@ p {
 
 hr {
     width: 95%;
-    color: var(--dark-gray);
+    color: var(--text-black);
 }
 
 * {
@@ -85,7 +82,7 @@ li {
 .navbutton,
 .internal-buttons {
     border-radius: 10px;
-    border: 2px solid var(--dark-gray);
+    border: 2px solid var(--button-borders);
     padding: 10px;
     margin: 0.75rem;
     color: black;
@@ -166,7 +163,7 @@ li {
     border-radius: 5px;
     /* Border radius for the individual projects */
     padding: 10px;
-    border: 2px solid var(--dark-blue);
+    border: 2px solid var(--internal-border-blue);
 }
 
 /* Makes the individual projects child elements align evenly by setting height to fill the entire container and then using flex-grow on 
@@ -201,7 +198,7 @@ li {
     border-radius: 5px;
     /* Border radius for the individual projects */
     padding: 10px;
-    border: 2px solid var(--dark-blue);
+    border: 2px solid var(--internal-border-blue);
 }
 
 .blogs-col-flex-container>div {
@@ -350,7 +347,7 @@ li {
     width: 400px;
     height: auto;
     margin-top: 1rem;
-    border: 2px solid var(--dark-gray);
+    /* border: 2px solid var(--dark-gray); */
     display: block;
 }
 
